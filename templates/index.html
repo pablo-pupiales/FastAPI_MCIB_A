@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ciberseguridad Quito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Leaflet CSS (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="/static/styles.css" />
+
+  <!-- (Opcional) Favicon para evitar 404 -->
+  <link rel="icon" href="/static/favicon.ico" />
+</head>
+<body>
+  <header>
+    <h1>EXPOSICION DE CIBERSEGURIDAD EN QUITO</h1>
+    <p>
+      Para denuncias formales en Ecuador, usar el formulario de EcuCERT(CSIRT nacional):
+      <a href="https://www.ecucert.gob.ec/incidentes/" target="_blank" rel="noopener">
+        Reportar incidente
+      </a>
+    </p>
+  </header>
+
+  <section id="controles">
+    <div class="panel">
+      <label for="txtDork">Filtro Shodan:</label>
+      <input id="txtDork" type="text" value='city:"Quito" port:3389' />
+      <button id="btnBuscar" type="button">Buscar Exposición</button>
+    </div>
+
+    <div class="panel">
+      <label for="txtIP">Reputación de IP:</label>
+      <input id="txtIP" type="text" placeholder="Ej: 176.111.173.242" />
+      <button id="btnIP" type="button">Consultar</button>
+      <pre id="ipOut"></pre>
+    </div>
+
+    <div class="panel">
+      <label for="txtKW">CVEs:</label>
+<input id="txtKW"
+       type="text" 
+       placeholder="Ej:Cisco"
+       title="Buscar vulnerabilidades por fabricante o producto (Eje: Cisco/nginx)" />
+        <select id="selSev">
+        <option value="">(todas)</option>
+        <option>CRITICAL</option>
+        <option>HIGH</option>
+        <option>MEDIUM</option>
+        <option>LOW</option>
+      </select>
+      <button id="btnCVE" type="button">Buscar CVEs</button>
+      <pre id="cveOut"></pre>
+    </div>
+  </section>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS (CDN) -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <!-- JS propio -->
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Ignorar el entorno virtual local creado por venv.
+# ".venv/" carpeta que crea Python al hacer "python -m venv .venv".
+       
+.venv/
+
+# Ignorar archivo con claves y secretos locales.
+# contiene API keys privadas.
+.env
+
+# Ignorar cachés de Python (archivos generados automáticamente).
+__pycache__/
+*.pyc

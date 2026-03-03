@@ -1,0 +1,14 @@
+# Framework web ASGI
+fastapi==0.110.0
+
+# Servidor ASGI para desarrollo
+uvicorn[standard]==0.27.1
+
+# Motor de plantillas
+jinja2==3.1.3
+
+# Cliente HTTP para consumo de APIs
+requests==2.31.0
+
+# Carga de variables desde .env
+python-dotenv==1.0.1
